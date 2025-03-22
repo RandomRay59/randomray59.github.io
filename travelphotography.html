@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>John Ray - Travel Photography</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+
+  <!-- Navbar with background image and overlaid text -->
+  <div class="navbar">
+      <div class="navbar-text">
+          Travel Photography
+      </div>
+      <nav>
+          <a href="index.html">Home</a>
+          <a href="astrophotography.html">Astrophotography</a>
+          <a href="naturephotography.html">Nature Photography</a>
+          <a href="hikingphotography.html">Hiking Photography</a>
+          <a href="travelphotography.html">Travel Photography</a>
+          <a href="photos.johnray.co.uk">All Photos</a>
+	  <a href="aboutme.html">About Me</a>
+      </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+      <h1>Travel Photography</h1>
+      <p>Here are a couple of my photos from various trips. I haven't done all too much travelling, but whenever I do
+I'll put all the photos up on here. Main trips destinations so far include: Lisbon, Paris, Liverpool & Snowdonia. Hopefully, many
+more are to come!</p>
+  </div>
+
+  <!-- Extra space for scrolling -->
+  <div class="extra-space"></div>
+
+  <!-- Footer -->
+  <footer>
+      <div class="footer-content">
+          <p>&copy; 2025 John Ray. All Rights Reserved.</p>
+          <p>Contact me at: <a href="mailto:photographybyjohnray@gmail.com">photographybyjohnray@gmail.com</a></p>
+          <div class="social-links">
+          <p>Or follow my Instagram at: <a href="https://instagram.com/john.59.ray" target="_blank">john.59.ray</a></p>
+          </div>
+      </div>
+  </footer>
+
+  <script>
+    // As the user scrolls, update the background opacity (0 at scrollY=0 to 1 at scrollY=1500)
+    window.addEventListener('scroll', () => {
+      let scrollY = window.scrollY;
+      let fraction = Math.min(scrollY / 1500, 1);
+      document.body.style.setProperty('--bg-opacity', fraction);
+      let fraction2 = (50 + 50 * Math.min(scrollY / 500, 1)) + '%';
+      document.body.style.setProperty('--NavBarmovement', fraction2);
+    });
+    
+    // Set the default background image (for the main background)
+    document.body.style.setProperty('--bg-image', "url('AndromedaBackground.jpg')");
+  </script>
+
+</body>
+</html>

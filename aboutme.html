@@ -55,7 +55,7 @@ or you can visit my Instagram at <a href="https://instagram.com/john.59.ray" tar
     // As the user scrolls, update the background opacity (0 at scrollY=0 to 1 at scrollY=1500)
     window.addEventListener('scroll', () => {
       let scrollY = window.scrollY;
-      let fraction = Math.min(scrollY / 750, 1);
+      let fraction = Math.min(scrollY / 1500, 1);
       document.body.style.setProperty('--bg-opacity', fraction);
       let fraction2 = (50 + 50 * Math.min(scrollY / 500, 1)) + '%';
       document.body.style.setProperty('--NavBarmovement', fraction2);

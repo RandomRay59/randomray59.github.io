@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>John Ray - Astrophotography</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+
+  <!-- Navbar with background image and overlaid text -->
+  <div class="navbar">
+      <div class="navbar-text">
+          Astrophotography
+      </div>
+      <nav>
+          <a href="index.html">Home</a>
+          <a href="astrophotography.html">Astrophotography</a>
+          <a href="naturephotography.html">Nature Photography</a>
+          <a href="photosredirect.html">All Photos</a>
+	  <a href="aboutme.html">About Me</a>
+      </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+      <h1>Astrophotography</h1>
+      <p>Here's a selection of my main Astrophotography pictures. There aren't too many at the moment, but I'm constantly
+taking new pictures. Most of these were taken by the Lancaster University Astronomy Society's RedCat51 telescope. I process all these
+pictures myself with Siril software, and further post-process them using GraXpert, StarNet and Adobe Photoshop.</p>
+  </div>
+
+  <!-- Extra space for scrolling -->
+  <div class="extra-space"></div>
+
+  <!-- Footer -->
+  <footer>
+      <div class="footer-content">
+          <p>&copy; 2025 John Ray. All Rights Reserved.</p>
+          <p>Contact me at: <a href="mailto:photographybyjohnray@gmail.com">photographybyjohnray@gmail.com</a></p>
+          <div class="social-links">
+          <p>Or follow my Instagram at: <a href="https://instagram.com/john.59.ray" target="_blank">john.59.ray</a></p>
+          </div>
+      </div>
+  </footer>
+
+  <script>
+    // As the user scrolls, update the background opacity (0 at scrollY=0 to 1 at scrollY=1500)
+    window.addEventListener('scroll', () => {
+      let scrollY = window.scrollY;
+      let fraction = Math.min(scrollY / 1500, 1);
+      document.body.style.setProperty('--bg-opacity', fraction);
+      let fraction2 = (50 + 50 * Math.min(scrollY / 1500, 1)) + '%';
+      document.body.style.setProperty('--NavBarmovement', fraction2);
+    });
+    
+    // Set the default background image (for the main background)
+    document.body.style.setProperty('--bg-image', "url('AndromedaBackground.jpg')");
+  </script>
+
+</body>
+</html>

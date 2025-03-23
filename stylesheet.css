@@ -111,7 +111,30 @@ body::before {
 .navbar nav a:hover::after {
   width: 100%;
 }
+/* Mobile fixes (hopefully) */
+@media screen and (max-width: 768px) {
+  .navbar {
+    aspect-ratio: 16 / 5; /* Adjusts navbar aspect ratio for mobile */
+    background-size: cover; /* Ensures background fits better */
+  }
 
+  .navbar-text {
+    font-size: 5vw; /* Resizes title on mobile */
+    padding: 20px 30px;
+    max-width: 90%; /* Ensures the text doesn't overflow */
+  }
+
+  .navbar nav {
+    top: 5px;
+    right: 5px;
+  }
+
+  .navbar nav a {
+    font-size: 14px; /* Smaller font size for nav links */
+    padding: 5px 10px; /* Reduces padding to fit better */
+    margin-left: 5px; /* Prevents links from overlapping */
+  }
+}
 /* Container for Main Content */
 .container {
   padding: 20px;

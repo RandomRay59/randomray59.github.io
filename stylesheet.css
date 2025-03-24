@@ -8,7 +8,7 @@ body {
   background-color: var(--bg-colour);
   
   /* Initialize background variables (used elsewhere) */
-  --bg-opacity: 1;
+  --bg-opacity: 0;
   /* --bg-image is set in JS */
 
   --navbar-opacity: 0.5;

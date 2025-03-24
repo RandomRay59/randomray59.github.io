@@ -35,7 +35,7 @@ body::before {
 /* Navbar styling */
 .navbar {
   /* Use your Navbar background image */
-  background: url('NavBarBackground.jpg');
+  --navbar-bg: url('NavBarBackground.jpg');
   background: var(--navbar-bg) center/100% auto no-repeat;
   width: 100%;
   /* Using aspect-ratio so that the full image is shown */

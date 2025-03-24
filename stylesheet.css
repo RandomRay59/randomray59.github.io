@@ -4,7 +4,8 @@ body {
   margin: 0;
   padding: 0;
   color: #333;
-  background-color: black;
+  --bgcolour: black;
+  background-color: var(--bgcolour);
   
   /* Initialize background variables (used elsewhere) */
   --bg-opacity: 0;

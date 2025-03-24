@@ -23,7 +23,6 @@ body::before {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: var(--bg-colour);
   background-image: var(--bg-image);
   background-size: cover;
   background-position: center;

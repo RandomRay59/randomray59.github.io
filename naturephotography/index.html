@@ -151,3 +151,18 @@ or usually with my AF-P Nikkor 70-300mm DX-VR lens (used for almost all my bird 
   </footer>
 
   <script>
+    // As the user scrolls, update the background opacity (0 at scrollY=0 to 1 at scrollY=1500)
+    window.addEventListener('scroll', () => {
+      let scrollY = window.scrollY;
+      let fraction = Math.min(scrollY / 1500, 1);
+      document.body.style.setProperty('--bg-opacity', fraction);
+      let fraction2 = (50 + 50 * Math.min(scrollY / 500, 1)) + '%';
+      document.body.style.setProperty('--NavBarmovement', fraction2);
+    });
+    
+    // Set the default background image (for the main background)
+    document.body.style.setProperty('--bg-image', "url('AndromedaBackground.jpg')");
+  </script>
+
+</body>
+</html>

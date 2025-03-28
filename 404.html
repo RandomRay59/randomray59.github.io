@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 Webpage not found</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="icon" href="Icon1.png" type="png">
+</head>
+<body style="--bg-colour: #000000;">
+
+  <!-- Navbar with background image and overlaid text -->
+  <div class="navbar">
+      <div class="navbar-text">
+          Webpage Not Found ~ Error 404 ~
+      </div>
+      <nav>
+          <a href="">Home</a>
+          <a href="/astrophotography/">Astrophotography</a>
+          <a href="/naturephotography/">Nature Photography</a>
+          <a href="/hikingphotography/">Hiking Photography</a>
+          <a href="/travelphotography/">Travel Photography</a>
+          <a href="https://john.orlandopb.com/">All Photos</a>
+	  <a href="/aboutme/">About Me</a>
+      </nav>
+  </div>
+
+  <!-- Main Content -->
+<section class="feature-section">
+    <a href="/naturephotography/" class="feature-item">
+        <div class="feature-image">
+            <img src="BirdPhotography.jpg" alt="Favourite Nature Photography" />
+        </div>
+        <div class="feature-text">
+            <h>Favourite Nature Photography</h>
+        </div>
+    </a>
+    <a href="/astrophotography/" class="feature-item">
+        <div class="feature-image">
+            <img src="AstroPhotography.jpg" alt="AstroPhotography" />
+        </div>
+        <div class="feature-text">
+            <p>Astrophotography</p>
+        </div>
+    </a>
+    <a href="/travelphotography/" class="feature-item">
+        <div class="feature-image">
+            <img src="TravellingPhotography.jpg" alt="Travelling Photography" />
+        </div>
+        <div class="feature-text">
+            <p>Travelling Photography</p>
+        </div>
+    </a>
+    <a href="/hikingphotography/" class="feature-item">
+        <div class="feature-image">
+            <img src="HikingPhotography.jpg" alt="Hiking Photography" />
+        </div>
+        <div class="feature-text">
+            <p>Hiking Photography</p>
+        </div>
+    </a>
+</section>
+
+
+  <div class="container">
+  <h1>Please visit another webpage using the links above. Alternatively, you can view all of my photos <a href="https://john.orlandopb.com/">HERE</a></h1>
+  </div>
+
+  <!-- Extra space for scrolling -->
+  <div class="extra-space"></div>
+
+  <!-- Footer -->
+  <footer>
+      <div class="footer-content">
+          <p>&copy; 2025 John Ray. All Rights Reserved.</p>
+          <p>Contact me at: <a href="mailto:photographybyjohnray@gmail.com">photographybyjohnray@gmail.com</a></p>
+          <div class="social-links">
+          <p>Or follow my Instagram at: <a href="https://instagram.com/john.59.ray" target="_blank">john.59.ray</a></p>
+          </div>
+      </div>
+  </footer>
+
+  <script>
+    // As the user scrolls, update the background opacity (0 at scrollY=0 to 1 at scrollY=1500)
+    window.addEventListener('scroll', () => {
+      let scrollY = window.scrollY;
+      let fraction = Math.min(scrollY / 1500, 1);
+      document.body.style.setProperty('--bg-opacity', fraction);
+      let fraction2 = (50 + 50 * Math.min(scrollY / 500, 1)) + '%';
+      document.body.style.setProperty('--NavBarmovement', fraction2);
+    });
+    
+    // Set the default background image (for the main background)
+    document.body.style.setProperty('--bg-image', "url('AndromedaBackground.jpg')");
+  </script>
+
+</body>
+</html>

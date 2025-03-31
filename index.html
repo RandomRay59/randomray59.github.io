@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The website of John Ray: a Theoretical Physics student, Photographer, and Astronomer. Studying at Lancaster University in the UK.">
+  <meta name="title" content="John Ray's Website (Homepage)">
+  <meta name="keywords" content="John Ray, Physics, Physicist, Student, Astronomy, Photography, Lancaster University, Nature Photography, Travel Photography, Astrophotography, LUAstro, Theoretical Physics">
   <title>John Ray - Home</title>
   <link rel="stylesheet" href="stylesheet.css">
   <link rel="icon" href="Icon1.png" type="png">
 </head>
 <body style="--bg-colour: #000000;">
-
-  <!-- Navbar with background image and overlaid text -->
   <div class="navbar">
       <div class="navbar-text">
           Welcome to John Ray's Website
@@ -24,8 +25,6 @@
 	  <a href="/aboutme/">About Me</a>
       </nav>
   </div>
-
-  <!-- Main Content -->
 <section class="feature-section">
     <a href="/naturephotography/" class="feature-item">
         <div class="feature-image">
@@ -61,25 +60,13 @@
     </a>
 </section>
 
-<!--  <div class="container">
-      <h1>About me</h1>
-      <p>Hello there! I am John Ray, an amateur Astronomer and Photographer!
-I'm currently a 2nd year Theoretical Physics student at Lancaster University,
-and created this website to store photos and get more practice at coding in HTML.</p>
-      <h2>Random trivia about me</h2>
-      <ul> <li>I once went to Portugal for 10 hours because I was bored.</li>
-	<li>I have made several hundred origami cranes.</li>
-	<li>I can't think of anything else to put on this list</li>
-	</ul>
-  </div> -->
+<!-- Why are you reading my code? It's a tad nosy, if you don't mind me saying. -->
+	
   <div class="container">
   <h1>Alternatively, you can view all of my photos <a href="https://john.orlandopb.com/">HERE</a></h1>
   </div>
-
-  <!-- Extra space for scrolling -->
   <div class="extra-space"></div>
 
-  <!-- Footer -->
   <footer>
       <div class="footer-content">
           <p>&copy; 2025 John Ray. All Rights Reserved.</p>
@@ -91,7 +78,8 @@ and created this website to store photos and get more practice at coding in HTML
   </footer>
 
   <script>
-    // As the user scrolls, update the background opacity (0 at scrollY=0 to 1 at scrollY=1500)
+    // As the user scrolls,the background opacity is updated (0 at scrollY = 0 to 1 at scrollY = 1500)
+    // This doesn't seem to work on older browsers. Presumably the HTML tags I use here are new or something.
     window.addEventListener('scroll', () => {
       let scrollY = window.scrollY;
       let fraction = Math.min(scrollY / 1500, 1);
@@ -99,10 +87,7 @@ and created this website to store photos and get more practice at coding in HTML
       let fraction2 = (50 + 50 * Math.min(scrollY / 500, 1)) + '%';
       document.body.style.setProperty('--NavBarmovement', fraction2);
     });
-    
-    // Set the default background image (for the main background)
     document.body.style.setProperty('--bg-image', "url('AndromedaBackground.jpg')");
   </script>
-
 </body>
 </html>

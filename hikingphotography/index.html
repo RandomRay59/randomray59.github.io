@@ -8,8 +8,6 @@
   <link rel="icon" href="/Icon1.png" type="png">
 </head>
 <body>
-
-  <!-- Navbar with background image and overlaid text -->
   <div class="navbar">
       <div class="navbar-text">
           Hiking Photography
@@ -24,19 +22,80 @@
 	  <a href="/aboutme/">About Me</a>
       </nav>
   </div>
-
-  <!-- Main Content -->
   <div class="container">
       <h1>Hiking Photography</h1>
-      <p>Here are a couple of my photos from various hikes, I'll hopefully be able to include GPX data and maps on them in the future.
-Due to my location, most of these hikes are in England's Lake District, but there's the occasional one from the Yorkshire Dales or Wales.
-As with most of this website, this page is a work in progress! It will hopefully be updated fully sometime soon.</p>
+      <p>Here are a couple of my photos from various hikes, I'll hopefully be able to include GPX data and maps on them in the future,
+alongside more images and information on each hike. Due to my location, most of these hikes are in England's Lake District,
+but there's the occasional one from the Yorkshire Dales or Wales. As with most of this website, this page is a work in progress!
+It will hopefully be updated fully sometime soon.</p>
   </div>
-
-  <!-- Extra space for scrolling -->
+<section class="feature-section">
+    <a class="feature-item">
+        <div class="feature-image">
+            <img src="/CloughaPikeHike.jpg" alt="Clougha Pike" />
+        </div>
+        <div class="feature-text">
+            <h>My first proper hike - an 8hr hike from Lancaster University to Clougha Pike, at the edge of Bowland Forest.</h>
+        </div>
+    </a>
+    <a class="feature-item">
+        <div class="feature-image">
+            <img src="/LangdalePikesHike.jpg" alt="Langdale Pikes" />
+        </div>
+        <div class="feature-text">
+            <h>My first hike with <a href="https://luhc.org.uk" target="_blank">LUHC</a>, I climbed Jack's Rake - a Grade I scramble.</h>
+        </div>
+    </a>
+    <a class="feature-item">
+        <div class="feature-image">
+            <img src="/HikingPhotography.jpg" alt="Patterdale" />
+        </div>
+        <div class="feature-text">
+            <h>Patterdale, a small village in Cumbria. Ullswater is pictured here.</h>
+        </div>
+    </a>
+    <a class="feature-item">
+        <div class="feature-image">
+            <img src="/SnowdonHike.jpg" alt="Snowdonia" />
+        </div>
+        <div class="feature-text">
+            <h>An image from a weekend trip with LUHC to Snowdonia (Eryri). Unfortunately, there was a rather bad storm at the time, but the group I was with ignored this and hiked up Snowdon anyway.</h>
+        </div>
+    </a>
+    <a class="feature-item">
+        <div class="feature-image">
+            <img src="/IngleboroughHike.jpg" alt="Ingleborough" />
+        </div>
+        <div class="feature-text">
+            <h>An image from near the summit of Ingleborough, one of the Yorkshire Three Peaks. The weather wasn't ideal!</h>
+        </div>
+    </a>
+    <a class="feature-item">
+        <div class="feature-image">
+            <img src="/GrasmereHike.jpg" alt="Grasmere" />
+        </div>
+        <div class="feature-text">
+            <h>An image of Rydal Water from Grasmere. Probably my favourite hike so far.</h>
+        </div>
+    </a>
+    <a class="feature-item">
+        <div class="feature-image">
+            <img src="/GlassonDockHike.jpg" alt="Glasson Dock" />
+        </div>
+        <div class="feature-text">
+            <h>A bridge over Lancaster Canal on the way to Glasson Dock.</h>
+        </div>
+    </a>
+    <a class="feature-item">
+        <div class="feature-image">
+            <img src="/GrizedaleForest.jpg" alt="Grizedale Forest" />
+        </div>
+        <div class="feature-text">
+            <h>Trees from a Day's Hike around Grizedale Forest, a forest between Coniston and Windermere.</h>
+        </div>
+    </a>
   <div class="extra-space"></div>
 
-  <!-- Footer -->
   <footer>
       <div class="footer-content">
           <p>&copy; 2025 John Ray. All Rights Reserved.</p>
@@ -48,7 +107,7 @@ As with most of this website, this page is a work in progress! It will hopefully
   </footer>
 
   <script>
-    // As the user scrolls, update the background opacity (0 at scrollY=0 to 1 at scrollY=1500)
+    // As the user scrolls, the background opacity updates (0 at scrollY = 0 to 1 at scrollY = 1500)
     window.addEventListener('scroll', () => {
       let scrollY = window.scrollY;
       let fraction = Math.min(scrollY / 1500, 1);
@@ -56,8 +115,6 @@ As with most of this website, this page is a work in progress! It will hopefully
       let fraction2 = (50 + 50 * Math.min(scrollY / 500, 1)) + '%';
       document.body.style.setProperty('--NavBarmovement', fraction2);
     });
-    
-    // Set the default background image (for the main background)
     document.body.style.setProperty('--bg-image', "url('/AndromedaBackground.jpg')");
   </script>
 

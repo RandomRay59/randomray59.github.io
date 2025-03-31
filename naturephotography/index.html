@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>John Ray - Nature Photography</title>
+  <title>Nature Photography - John Ray</title>
   <link rel="stylesheet" href="/stylesheet.css">
   <link rel="icon" href="/Icon1.png" type="png">
 </head>
 <body>
-
-  <!-- Navbar with background image and overlaid text -->
   <div class="navbar">
       <div class="navbar-text">
           Nature Photography
@@ -24,8 +22,6 @@
 	        <a href="/aboutme/">About Me</a>
       </nav>
   </div>
-
-  <!-- Main Content -->
   <div class="container">
       <h1>Nature Photography</h1>
       <p>Here are most of my best photos of nature. As a keen birdwatcher in the UK, all of my nature pictures on here are of 
@@ -135,11 +131,9 @@ or usually with my AF-P Nikkor 70-300mm DX-VR lens (used for almost all my bird 
 <div class="container">
   <h1>You can view the rest of my bird photos <a href="https://john.orlandopb.com/">HERE</a></h1>
   </div>
-
-  <!-- Extra space for scrolling -->
+	
   <div class="extra-space"></div>
 
-  <!-- Footer -->
   <footer>
       <div class="footer-content">
           <p>&copy; 2025 John Ray. All Rights Reserved.</p>
@@ -151,7 +145,8 @@ or usually with my AF-P Nikkor 70-300mm DX-VR lens (used for almost all my bird 
   </footer>
 
   <script>
-    // As the user scrolls, update the background opacity (0 at scrollY=0 to 1 at scrollY=1500)
+    // As the user scrolls, the background opacity updates (0 at scrollY = 0 to 1 at scrollY = 1500)
+    // Doesn't work on older browsers.
     window.addEventListener('scroll', () => {
       let scrollY = window.scrollY;
       let fraction = Math.min(scrollY / 1500, 1);
@@ -159,8 +154,6 @@ or usually with my AF-P Nikkor 70-300mm DX-VR lens (used for almost all my bird 
       let fraction2 = (50 + 50 * Math.min(scrollY / 500, 1)) + '%';
       document.body.style.setProperty('--NavBarmovement', fraction2);
     });
-    
-    // Set the default background image (for the main background)
     document.body.style.setProperty('--bg-image', "url('AndromedaBackground.jpg')");
   </script>
 

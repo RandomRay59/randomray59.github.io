@@ -125,6 +125,82 @@ pictures myself with Siril software, and further post-process them using GraXper
     // Set the default background image (for the main background)
     document.body.style.setProperty('--bg-image', "url('/AndromedaBackground.jpg')");
   </script>
+	
+  <!-- Lightbox Markup -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <button class="lb-close"    title="Close">✕</button>
+      <button class="lb-maximize" title="Maximize">⤢</button>
+      <img src="" alt="">
+      <p class="lb-caption"></p>
+      <button class="lb-prev"     title="Previous">‹</button>
+      <button class="lb-next"     title="Next">›</button>
+    </div>
+  </div>
 
+  <!-- Lightbox Script -->
+  <script>
+    (function() {
+      // Only images within .feature-item open the lightbox:
+      const items = Array.from(document.querySelectorAll('.feature-item img'));
+      const lightbox   = document.getElementById('lightbox');
+      const lbContent  = lightbox.querySelector('.lightbox-content');
+      const lbImg      = lbContent.querySelector('img');
+      const lbCaption  = lbContent.querySelector('.lb-caption');
+      const closeBtn   = lbContent.querySelector('.lb-close');
+      const maxBtn     = lbContent.querySelector('.lb-maximize');
+      const prevBtn    = lbContent.querySelector('.lb-prev');
+      const nextBtn    = lbContent.querySelector('.lb-next');
+      let currentIndex = 0;
+
+      function showLightbox(idx) {
+        currentIndex = idx;
+        const imgEl = items[idx];
+        lbImg.src    = imgEl.src;
+        lbImg.alt    = imgEl.alt;
+        lbCaption.textContent = imgEl.closest('.feature-item').dataset.caption || imgEl.alt || '';
+        lightbox.classList.add('open');
+      }
+
+      function hideLightbox() {
+        lightbox.classList.remove('open');
+        if (document.fullscreenElement) document.exitFullscreen();
+      }
+
+      function showPrev() { showLightbox((currentIndex - 1 + items.length) % items.length); }
+      function showNext() { showLightbox((currentIndex + 1) % items.length); }
+
+      items.forEach((img, idx) => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', e => {
+          e.preventDefault();
+          showLightbox(idx);
+        });
+      });
+
+      closeBtn.addEventListener('click', e => { e.stopPropagation(); hideLightbox(); });
+      lightbox.addEventListener('click', hideLightbox);
+      lbContent.addEventListener('click', e => e.stopPropagation());
+      prevBtn.addEventListener('click', e => { e.stopPropagation(); showPrev(); });
+      nextBtn.addEventListener('click', e => { e.stopPropagation(); showNext(); });
+      maxBtn.addEventListener('click', e => {
+	 e.stopPropagation();
+	  if (!document.fullscreenElement) {
+	    lbContent.requestFullscreen();
+	  } else {
+	    document.exitFullscreen();
+	  }
+	});
+
+
+      document.addEventListener('keydown', e => {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'Escape') hideLightbox();
+        if (e.key === 'ArrowLeft') showPrev();
+        if (e.key === 'ArrowRight') showNext();
+        if (e.key === 'Enter') maxBtn.click();
+      });
+    })();
+  </script>
 </body>
 </html>

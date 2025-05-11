@@ -57,7 +57,7 @@ once my friend said he was on his way. </p>
     </a>
     <a class="feature-item">
         <div class="feature-image">
-            <img src="/Spirit of Liverpool.JPG" alt="Scouse views" />
+            <img src="/Spirit of Liverpool.JPG" alt="Views of the city from Lime Street" />
         </div>
         <div class="feature-text">
             <h>I feel like this image captures the feel of the city best. Liverpool has a fascinating mix of architectural styles.</h>
@@ -65,7 +65,7 @@ once my friend said he was on his way. </p>
     </a>
     <a class="feature-item">
         <div class="feature-image">
-            <img src="/Second View.JPG" alt="More Scouse views" />
+            <img src="/Second View.JPG" alt="More views of the city />
         </div>
         <div class="feature-text">
             <h>More views of the city, you can make out the World Museum on the right.</h>
@@ -81,7 +81,7 @@ once my friend said he was on his way. </p>
     </a>
 	<a class="feature-item">
         <div class="feature-image">
-            <img src="/Superllambanana.JPG" alt="SuperLambanana" />
+            <img src="/Superllambanana.JPG" alt="The SuperLambanana Statue" />
         </div>
         <div class="feature-text">
             <h>The SuperLambanana Statue. At almost 8 tonnes, this is the biggest Lamb-banana hybrid statue that I have ever seen.</h>
@@ -89,7 +89,7 @@ once my friend said he was on his way. </p>
     </a>
 	<a class="feature-item">
         <div class="feature-image">
-            <img src="/Sign of Beatle Street.JPG" alt="Beatle Street" />
+            <img src="/Sign of Beatle Street.JPG" alt="Sign of Beatle Street" />
         </div>
         <div class="feature-text">
             <h>"Beatle Street" at the heart of Liverpool's musical quarter.</h>
@@ -97,7 +97,7 @@ once my friend said he was on his way. </p>
     </a>
 	<a class="feature-item">
         <div class="feature-image">
-            <img src="/The Cavern Club.JPG" alt="Cavern Club" />
+            <img src="/The Cavern Club.JPG" alt=" The Cavern Club" />
         </div>
         <div class="feature-text">
             <h>The famous Cavern Club. Home of Merseybeat and inspired by Parisian jazz clubs, this venue hosted the Beatles in their early years.</h>
@@ -105,7 +105,7 @@ once my friend said he was on his way. </p>
     </a>
 	<a class="feature-item">
         <div class="feature-image">
-            <img src="/Sign of Cavern Club.JPG" alt="Sign of Cavern Club" />
+            <img src="/Sign of Cavern Club.JPG" alt="Sign of the Cavern Club" />
         </div>
         <div class="feature-text">
             <h>Sign of the Cavern Club; a nice test of my camera at lower exposures.</h>
@@ -113,7 +113,7 @@ once my friend said he was on his way. </p>
    </a>
 	<a class="feature-item">
         <div class="feature-image">
-            <img src="/Sgt Peppers.JPG" alt="Sgt Pepper's Club" />
+            <img src="/Sgt Peppers.JPG" alt="Sign of the Sgt Pepper's Club" />
         </div>
         <div class="feature-text">
             <h>Sgt Pepper's Club, one music venue beside many.</h>
@@ -121,7 +121,7 @@ once my friend said he was on his way. </p>
     </a>
 	<a class="feature-item">
         <div class="feature-image">
-            <img src="/Scouse Architecture.JPG" alt="Scouse Architecture" />
+            <img src="/Scouse Architecture.JPG" alt="Mix of architecture" />
         </div>
         <div class="feature-text">
             <h>A nice example of the differing architectural styles of the city. Due to new building developments, Liverpool lost its World Heritage Status in 2021.</h>
@@ -137,7 +137,7 @@ once my friend said he was on his way. </p>
     </a>
 	<a class="feature-item">
         <div class="feature-image">
-            <img src="/Very nice image.JPG" alt="Liver Building" />
+            <img src="/Very nice image.JPG" alt="The Liver Building with an equestrian statue" />
         </div>
         <div class="feature-text">
             <h>Another view of the Liver Building, with an equestrian statue in the foreground.</h>
@@ -145,7 +145,7 @@ once my friend said he was on his way. </p>
     </a>
 	<a class="feature-item">
         <div class="feature-image">
-            <img src="/Mersey Ferry.JPG" alt="Mersey Ferry" />
+            <img src="/Mersey Ferry.JPG" alt="A ferry going along the Mersey River" />
         </div>
         <div class="feature-text">
             <h>One of many Mersey Ferries, another feature of the city.</h>
@@ -153,7 +153,7 @@ once my friend said he was on his way. </p>
     </a>
 	<a class="feature-item">
         <div class="feature-image">
-            <img src="/The Beatles themselves.JPG" alt="The Beatles" />
+            <img src="/The Beatles themselves.JPG" alt="The Beatles frozen in stone" />
         </div>
         <div class="feature-text">
             <h>The Beatles themselves, frozen in stone for tourism purposes.</h>
@@ -194,6 +194,83 @@ once my friend said he was on his way. </p>
     
     // Set the default background image (for the main background)
     document.body.style.setProperty('--bg-image', "url('/LiverpoolBackground.jpg')");
+  </script>
+
+  <!-- Lightbox Markup -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <button class="lb-close"    title="Close">✕</button>
+      <button class="lb-maximize" title="Maximize">⤢</button>
+      <img src="" alt="">
+      <p class="lb-caption"></p>
+      <button class="lb-prev"     title="Previous">‹</button>
+      <button class="lb-next"     title="Next">›</button>
+    </div>
+  </div>
+
+  <!-- Lightbox Script -->
+  <script>
+    (function() {
+      // Only images within .feature-item open the lightbox:
+      const items = Array.from(document.querySelectorAll('.feature-item img'));
+      const lightbox   = document.getElementById('lightbox');
+      const lbContent  = lightbox.querySelector('.lightbox-content');
+      const lbImg      = lbContent.querySelector('img');
+      const lbCaption  = lbContent.querySelector('.lb-caption');
+      const closeBtn   = lbContent.querySelector('.lb-close');
+      const maxBtn     = lbContent.querySelector('.lb-maximize');
+      const prevBtn    = lbContent.querySelector('.lb-prev');
+      const nextBtn    = lbContent.querySelector('.lb-next');
+      let currentIndex = 0;
+
+      function showLightbox(idx) {
+        currentIndex = idx;
+        const imgEl = items[idx];
+        lbImg.src    = imgEl.src;
+        lbImg.alt    = imgEl.alt;
+        lbCaption.textContent = imgEl.closest('.feature-item').dataset.caption || imgEl.alt || '';
+        lightbox.classList.add('open');
+      }
+
+      function hideLightbox() {
+        lightbox.classList.remove('open');
+        if (document.fullscreenElement) document.exitFullscreen();
+      }
+
+      function showPrev() { showLightbox((currentIndex - 1 + items.length) % items.length); }
+      function showNext() { showLightbox((currentIndex + 1) % items.length); }
+
+      items.forEach((img, idx) => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', e => {
+          e.preventDefault();
+          showLightbox(idx);
+        });
+      });
+
+      closeBtn.addEventListener('click', e => { e.stopPropagation(); hideLightbox(); });
+      lightbox.addEventListener('click', hideLightbox);
+      lbContent.addEventListener('click', e => e.stopPropagation());
+      prevBtn.addEventListener('click', e => { e.stopPropagation(); showPrev(); });
+      nextBtn.addEventListener('click', e => { e.stopPropagation(); showNext(); });
+      maxBtn.addEventListener('click', e => {
+	 e.stopPropagation();
+	  if (!document.fullscreenElement) {
+	    lbContent.requestFullscreen();
+	  } else {
+	    document.exitFullscreen();
+	  }
+	});
+
+
+      document.addEventListener('keydown', e => {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'Escape') hideLightbox();
+        if (e.key === 'ArrowLeft') showPrev();
+        if (e.key === 'ArrowRight') showNext();
+        if (e.key === 'Enter') maxBtn.click();
+      });
+    })();
   </script>
 
 </body>

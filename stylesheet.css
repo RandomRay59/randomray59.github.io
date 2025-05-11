@@ -274,6 +274,13 @@ body::before {
   height: 100vh;
   max-width: 100vw;
 }
+/* Should centre the fullscreen lightbox, hopefully */
+:fullscreen .lightbox-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Caption: visible in normal mode */
 .lb-caption {
   position: absolute;

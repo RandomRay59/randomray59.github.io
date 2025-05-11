@@ -289,6 +289,16 @@ img:fullscreen {
   object-fit: contain;
 }
 
+/* Absolute‐center any fullscreened img */
+img:fullscreen,
+.lightbox-content:fullscreen img,
+.lightbox-content:-webkit-full-screen img,
+.lightbox-content:-moz-full-screen img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 /* Caption: visible in normal mode */
 .lb-caption {

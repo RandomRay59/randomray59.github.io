@@ -269,11 +269,6 @@ body::before {
   object-fit: contain;
 }
 
-/* Fullscreen mode: fill full height and width without cropping */
-:fullscreen .lightbox-content img {
-  height: 100vh;
-  max-width: 100vw;
-}
 /* Should centre the fullscreen lightbox, hopefully */
 :fullscreen .lightbox-content {
   display: flex;
@@ -281,6 +276,14 @@ body::before {
   align-items: center;
   width: 100vw;
   height: 100vh;
+}
+
+/* Fullscreen mode: fill full height and width without cropping */
+:fullscreen .lightbox-content img {
+  max-height: 100vh;
+  max-width: 100vw;
+  height: auto;
+  width: auto;
 }
 
 /* Caption: visible in normal mode */

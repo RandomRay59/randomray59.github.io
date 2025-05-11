@@ -264,7 +264,7 @@ body::before {
 .lightbox-content img {
   display: block;
   margin: auto;
-  max-width: 100%;
+  max-width: 100vh;
   max-height: 90vh;
   object-fit: contain;
 }

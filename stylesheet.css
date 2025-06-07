@@ -146,13 +146,14 @@ body::before {
   background-color: var(--containercolour);
   --textcolour: white;
   color: var(--textcolour);
+  --linkcolour: #bbb;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   border-radius: 8px;
   text-align: center;
 }
 
 .container a {
-  color: #bbb;
+  color: var(--linkcolour);
   text-decoration: none;
 }
 .container a:hover {

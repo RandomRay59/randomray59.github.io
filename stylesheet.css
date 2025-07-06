@@ -37,10 +37,8 @@ body::before {
   z-index: -1;
 }
 
-/* ==============================
-   Navbar Base Styles
-   ============================== */
-
+/* Navbar styling */
+/* Navbar styling */
 .navbar {
   --navbar-bg: url('NavBarBackground.jpg');
   background: var(--navbar-bg) center/100% auto no-repeat;
@@ -120,9 +118,9 @@ body::before {
 .navbar nav .submenu {
   display: none;
   position: absolute;
-  top: 100%;   /* Below the link */
-  left: 0;     /* Align left edge */
-  transform: none;  /* Remove horizontal centering */
+  top: 100%;       /* Below the link */
+  left: 50%;       /* Start centered */
+  transform: translateX(-50%);  /* Shift back half width to center */
   background: rgba(51, 51, 51, 0.9);
   padding: 0.5rem 0;
   list-style: none;
@@ -130,13 +128,13 @@ body::before {
   border-radius: 4px;
   white-space: nowrap;
   z-index: 3;
+  gap: 0.5rem;
 }
 
-/* Show submenu on hover */
+/* Show submenu only when hovering the parent nav-item */
 .nav-item.has-submenu:hover > .submenu {
-  display: block;
+  display: flex;
 }
-
 
 /* Submenu links */
 .navbar nav .submenu li a {
@@ -154,37 +152,53 @@ body::before {
 /* ——— MOBILE FIXES ——— */
 @media screen and (max-width: 768px) {
   .navbar {
-    aspect-ratio: 16 / 5; /* Adjusts navbar aspect ratio for mobile */
-    background-size: cover; /* Ensures background fits better */
+    aspect-ratio: 16 / 5; /* Adjust navbar aspect ratio for mobile */
+    background-size: cover; /* Ensure background fits better */
   }
 
   .navbar-text {
-    font-size: 5vw; /* Resizes title on mobile */
+    font-size: 5vw; /* Resize title on mobile */
     padding: 20px 30px;
-    max-width: 90%; /* Ensures the text doesn't overflow */
+    max-width: 90%; /* Prevent text overflow */
   }
 
   .navbar nav {
-    top: 5px;
-    right: 5px;
-    margin: .5rem auto 0;  /* keep it centered */
+    margin: 0.5rem auto 0;
   }
 
   .navbar nav a {
-    font-size: 8px; /* Smaller font size for nav links */
-    padding: 5px 10px; /* Reduces padding to fit better */
-    margin-left: 5px; /* Prevents links from overlapping */
+    font-size: 8px; /* Smaller font size */
+    padding: 5px 10px;
+    margin-left: 5px;
   }
 
-  /* Mobile submenu: just stack under their header link */
-  .navbar nav a + ul {
+  /* Mobile submenu stacked vertically under parent */
+  .nav-item.has-submenu {
+    position: static;
+  }
+
+  .navbar nav .submenu {
+    display: none;
     position: static;
     transform: none;
-    width: 80%;
-    margin: .25rem auto 0;
+    flex-direction: column;
+    background: rgba(51, 51, 51, 0.9);
+    padding: 0;
+    gap: 0;
+    white-space: normal;
+  }
+
+  /* Show submenu when parent is hovered or focused on mobile */
+  .nav-item.has-submenu:hover > .submenu,
+  .nav-item.has-submenu:focus-within > .submenu {
+    display: flex;
+  }
+
+  .navbar nav .submenu li a {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
   }
 }
-
 
 /* Container for Main Content */
 .container {

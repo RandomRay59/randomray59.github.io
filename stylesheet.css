@@ -37,76 +37,70 @@ body::before {
   z-index: -1;
 }
 
-/* =======================
-       Navbar Styling:
-   ======================= */
+/* ==============================
+   Navbar Base Styles
+   ============================== */
 
+/* Container */
 .navbar {
-  /* Use your Navbar background image */
-  --navbar-bg: url('NavBarBackground.jpg');
-  background: var(--navbar-bg) center/100% auto no-repeat;
   width: 100%;
-  /* Using aspect-ratio so that the full image is shown */
+  background: url('NavBarBackground.jpg') center/100% auto no-repeat;
   aspect-ratio: 4944 / 1306;
   position: relative;
   overflow: hidden;
 }
 
-/* Container for text that appears on the Navbar */
+/* Overlay text box */
 .navbar-text {
   position: absolute;
-  top: 50%;
+  top: var(--NavBarmovement, 50%);
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
+  background-color: rgba(51, 51, 51, 0.5);
+  padding: 50px;
+  max-width: 600px;
+  font-size: 50px;
   color: white;
   text-align: center;
-  font-size: 80px;
-  padding: 10px 0;
   z-index: 2;
-  /* Optionally add a subtle text-shadow for better legibility */
   text-shadow: 1px 1px 2px gray;
 }
 
-/* Optional styling for the navigation links within the Navbar */
+/* Primary nav container */
 .navbar nav {
-  position: absolute;
+  position: relative !important;
   margin: 1rem auto 0;
   text-align: center;
   z-index: 2;
 }
 
-/* Navbar Text Box Behind Title */
-.navbar-text {
-  position: absolute;
-  top: var(--NavBarmovement);
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(51, 51, 51, 0.5);  /* Same shade as the container (dark grey) with opacity */
-  padding: 50px 50px;
-  max-width: 600px;
-  font-size: 50px;
-  color: white;
-  z-index: 2;
+/* Flex wrapper for links (allows easy row/column switch) */
+.navbar nav ul {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
+/* Top‑level link styling */
 .navbar nav a {
   display: inline-block;
-  padding: 10px 15px;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
   color: white;
   text-decoration: none;
-  /* Use RGBA so that only the background is translucent */
-  background-color: rgba(87, 87, 87, var(--navbar-opacity));
+  background-color: rgba(87, 87, 87, var(--navbar-opacity, 0.5));
   transition: background-color 0.25s ease;
   position: relative;
 }
 
+/* Hover background and underline */
 .navbar nav a:hover {
-  /* On hover, set background fully opaque */
   background-color: rgba(87, 87, 87, 1);
 }
-
-/* Underline effect */
 .navbar nav a::after {
   content: '';
   position: absolute;
@@ -117,75 +111,64 @@ body::before {
   background-color: white;
   transition: width 0.25s ease;
 }
-
 .navbar nav a:hover::after {
   width: 100%;
 }
 
-/* ——— SUBMENU SUPPORT ——— */
+/* ==============================
+   Submenu Styles
+   ============================== */
 
-/* hide any <ul> immediately after a link */
-.navbar nav a + ul {
+/* Ensure each <li> is a positioning context */
+.navbar nav ul li {
+  position: relative;
+}
+
+/* Hide nested UL by default */
+.navbar nav ul li ul {
   display: none;
   position: absolute;
-  top: calc(100% + 4px);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(51, 51, 51, 0.85);
+  background: rgba(51, 51, 51, 0.8);
   list-style: none;
-  margin: 0;
   padding: 0.5rem 0;
+  margin: 0;
   border-radius: 4px;
   white-space: nowrap;
-  z-index: 3;
+  z-index: 10;
 }
 
-/* submenu link styling */
-.navbar nav a + ul li a {
+/* Submenu link items */
+.navbar nav ul li ul li a {
   display: block;
   padding: 0.5rem 1rem;
-  color: #fff;
   font-size: 0.9rem;
-  text-decoration: none;
+  color: #fff;
+}
+.navbar nav ul li ul li a:hover {
+  background: rgba(87, 87, 87, 1);
 }
 
-/* reveal submenu on hover of the preceding <a> or the submenu itself */
-.navbar nav a:hover + ul,
-.navbar nav a + ul:hover {
+/* Reveal submenu on hover */
+.navbar nav ul li:hover > ul {
   display: block;
 }
 
-/* ——— MOBILE FIXES ——— */
-@media screen and (max-width: 768px) {
-  .navbar {
-    aspect-ratio: 16 / 5; /* Adjusts navbar aspect ratio for mobile */
-    background-size: cover; /* Ensures background fits better */
-  }
+/* ==============================
+   Responsive: Vertical Stack + Larger Font
+   ============================== */
 
-  .navbar-text {
-    font-size: 5vw; /* Resizes title on mobile */
-    padding: 20px 30px;
-    max-width: 90%; /* Ensures the text doesn't overflow */
+/* Switch to column layout and bump font on narrow screens */
+@media (max-width: 768px) {
+  .navbar nav ul {
+    flex-direction: column !important;
+    gap: 0.5rem;
   }
-
-  .navbar nav {
-    top: 5px;
-    right: 5px;
-    margin: .5rem auto 0;  /* keep it centered */
-  }
-
   .navbar nav a {
-    font-size: 8px; /* Smaller font size for nav links */
-    padding: 5px 10px; /* Reduces padding to fit better */
-    margin-left: 5px; /* Prevents links from overlapping */
-  }
-
-  /* Mobile submenu: just stack under their header link */
-  .navbar nav a + ul {
-    position: static;
-    transform: none;
-    width: 80%;
-    margin: .25rem auto 0;
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
   }
 }
 

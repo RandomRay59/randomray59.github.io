@@ -14,7 +14,7 @@ body {
   /* Initialize background variables (used elsewhere) */
   --bg-opacity: 0;
   /* --bg-image is set in JS */
-
+  --navbar-bg: url('NavBarBackground.jpg');
   --navbar-opacity: 0.5;
   --NavBarmovement: 50%;
 }
@@ -44,7 +44,7 @@ body::before {
 /* Container */
 .navbar {
   width: 100%;
-  background: url('NavBarBackground.jpg') center/100% auto no-repeat;
+  background: var(--navbar-bg) center/100% auto no-repeat;
   aspect-ratio: 4944 / 1306;
   position: relative;
   overflow: hidden;

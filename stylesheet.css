@@ -203,7 +203,8 @@ body::before {
 /* Container for Main Content */
 .container {
   padding: 20px;
-  max-width: 800px;
+  max-width: var(--containerwidth);
+  --containerwidth: 800px;
   margin: 40px auto;
   --containercolour: #333;
   background-color: var(--containercolour);
@@ -222,6 +223,95 @@ body::before {
 .container a:hover {
   color: white;
 }
+
+/* Aidan Sean -esque container
+   for the Projects page    */
+
+.projectscontainer {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+  max-width: 800px;
+  margin: 40px auto;
+  --containercolour: #333;
+  background-color: var(--containercolour);
+  --textcolour: white;
+  color: var(--textcolour);
+  --linkcolour: #bbb;
+  --titleboxcolour: #555;  /* new: background of the title link */
+  --tagboxcolour: #444;    /* new: background of each tag */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  text-align: left;        /* switch to left for flex layout */
+  gap: 20px;
+}
+
+/* Left image column */
+.projectscontainer .left {
+  flex: 0 0 150px;
+}
+.projectscontainer .left img {
+  max-width: 150px;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Center content column */
+.projectscontainer .center {
+  flex: 1;
+}
+
+/* Title box inside center */
+.projectscontainer .title-box {
+  display: inline-block;
+  background-color: var(--titleboxcolour);
+  padding: 8px 12px;
+  margin-bottom: 0px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.projectscontainer .title-box h1 {
+  font-size: 2em;                /* tweak as needed */
+  margin: 0;                     /* remove default h1 margins */
+  line-height: 1.2;              /* nice vertical rhythm */
+}
+
+.projectscontainer .title-box h1 a {
+  display: inline-block;
+  color: var(--linkcolour);
+  text-decoration: none;
+}
+.projectscontainer .title-box h1 a:hover {
+  color: white;
+  text-decoration: none;
+}
+.projectscontainer .center p a {
+  color: var(--linkcolour);
+  text-decoration: none;
+}
+.projectscontainer .center p a:hover {
+  color: white;
+}
+/* Right tags column */
+.projectscontainer .right {
+  flex: 0 0 150px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+/* Individual tag style */
+.projectscontainer .right .tag {
+  background-color: var(--tagboxcolour);
+  color: var(--textcolour);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
 
 /* Feature Section (Container for Items) */
 .feature-section {

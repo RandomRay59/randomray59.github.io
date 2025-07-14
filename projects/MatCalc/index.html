@@ -43,13 +43,15 @@
   <div class="container">
       <h1>C++ coding project</h1>
       <p>This is my first attempt at coding with C++ - where I used it to make a basic matrix calculator (MatCalc). It can currently only generate the 
-      determinants (and thus the inverse matrix) of matrices that are <= 3x3. It also uses some noticeably inefficient version control - containing code 
+      determinants (and thus the inverse matrix) of matrices that are less than or equal to 3x3. It also uses some noticeably inefficient version control - containing code 
       that is nested up to 8 times in some points! Regardless, it does the job - and I plan to improve its efficiency by using Strassen algorithms to perform 
       the matrix multiplications, and by using functions and general OOP to decrease nesting (which I neglected to do here as I feared it would complicate the 
-	      program further (which was a BIG mistake! (Whoops, looks like I'm nesting things again.))).</p>
+	      program further (which was a BIG mistake! (whoops, looks like I'm nesting things again.))).</p>
   </div>
   <div class = "container">
-	  <p>The code below is hosted and compiled using Jdoodle.com, and written using the standard C/C++ v1.26.3 extension for Visual Studio Code. Enjoy! (You may have to scroll a bit to get to the Execute button, sorry.) </p>
+	  <p>The code below is hosted and compiled using Jdoodle.com's C++ online compiler, and written using the standard C/C++ v1.26.3 extension for Visual Studio Code. Due to the size of the code, 
+		  you may have to scroll a bit to get to the Execute button, sorry. Additionally, the code relies on the standard cin command to take inputs, so the Interactive Mode <b>MUST</b> be enabled 
+		  (unless you wish to preemptively put in inputs using the STDIN input option, but my code isn't designed around this).</p>
   </div>
   <div class="container" style= "height = 1500px; --containercolour: #7d7979;"> 
       <div data-pym-src='https://www.jdoodle.com/embed/v1/ef105122df1cabe7'></div>
@@ -58,9 +60,6 @@
  <div class="container">
  <p><b>Important: For the program to function correctly, please enable the "Interactive Mode" option.</b></p>
  </div>
-<div class="container">
-  <h1>You can view the rest of my coding projects <a href="/projects/">HERE</a> (once there are more to view!)</h1>
-</div>
 
   <footer>
       <div class="footer-content">
@@ -74,7 +73,7 @@
 
   <script>
     // As the user scrolls, the background opacity updates (0 at scrollY = 0 to 1 at scrollY = 1500)
-    // Doesn't work on older browsers.
+    // Doesn't work on older browsers
     window.addEventListener('scroll', () => {
       let scrollY = window.scrollY;
       let fraction = Math.min(scrollY / 1500, 1);

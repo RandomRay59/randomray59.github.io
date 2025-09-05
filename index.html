@@ -10,7 +10,7 @@
 	  Lancaster, pictures, Astro, John, space">
   <title>John Ray - Home</title>
   <link rel="stylesheet" href="stylesheet.css">
-  <link rel="icon" href="Icon2.png" type="png">
+  <link rel="icon" href="images/general-assets/Icon2.png" type="png">
 </head>
 <body style="--bg-colour: #000000;">
   <div class="navbar">
@@ -33,11 +33,12 @@
 	<div class="nav-item has-submenu">
 	  <a href="/travelphotography/">Travel Photography</a>
 	  <ul class="submenu">
-            <li><a href="/lisbontrip/">Lisbon Trip</a></li>
-            <li><a href="/liverpooltrip/">Liverpool Trip</a></li>
-            <li><a href="/angleseytrip/">Anglesey Trip</a></li>
-            <li><a href="/brusselstrip/">Brussels Trip</a></li>
-            <li><a href="/yorktrip/">York Trip</a></li>
+            <li><a href="/lisbon-trip/">Lisbon Trip</a></li>
+            <li><a href="/liverpool-trip/">Liverpool Trip</a></li>
+            <li><a href="/anglesey-trip/">Anglesey Trip</a></li>
+            <li><a href="/brussels-trip/">Brussels Trip</a></li>
+            <li><a href="/york-trip/">York Trip</a></li>
+            <li><a href="/farne-islands-day-one/">Farne Islands Trip</a></li>
           </ul>
 	</div>
           <a href="https://clients.naturewebsites.com/john">All Photos</a>
@@ -47,7 +48,7 @@
 <section class="feature-section">
     <a href="/naturephotography/" class="feature-item">
         <div class="feature-image">
-            <img src="BirdPhotography.jpg" alt="Favourite Nature Photography" />
+            <img src="images/general-assets/BirdPhotography.jpg" alt="Favourite Nature Photography" />
         </div>
         <div class="feature-text">
             <h>Nature Photography</h>
@@ -55,7 +56,7 @@
     </a>
     <a href="/astrophotography/" class="feature-item">
         <div class="feature-image">
-            <img src="AstroPhotography.jpg" alt="AstroPhotography" />
+            <img src="images/general-assets/AstroPhotography.jpg" alt="AstroPhotography" />
         </div>
         <div class="feature-text">
             <p>Astrophotography</p>
@@ -63,7 +64,7 @@
     </a>
     <a href="/travelphotography/" class="feature-item">
         <div class="feature-image">
-            <img src="TravellingPhotography.jpg" alt="Travelling Photography" />
+            <img src="images/general-assets/TravellingPhotography.jpg" alt="Travelling Photography" />
         </div>
         <div class="feature-text">
             <p>Travel Photography</p>
@@ -71,7 +72,7 @@
     </a>
     <a href="/hikingphotography/" class="feature-item">
         <div class="feature-image">
-            <img src="HikingPhotography.jpg" alt="Hiking Photography" />
+            <img src="images/general-assets/HikingPhotography.jpg" alt="Hiking Photography" />
         </div>
         <div class="feature-text">
             <p>Hiking Photography</p>
@@ -101,19 +102,8 @@
           </div>
       </div>
   </footer>
-
-  <script>
-    // As the user scrolls,the background opacity is updated (0 at scrollY = 0 to 1 at scrollY = 1500)
-    // This doesn't seem to work on older browsers. Presumably the HTML tags I use here are new or something.
-    window.addEventListener('scroll', () => {
-      let scrollY = window.scrollY;
-      let fraction = Math.min(scrollY / 1500, 1);
-      document.body.style.setProperty('--bg-opacity', fraction);
-      let fraction2 = (50 + 50 * Math.min(scrollY / 500, 1)) + '%';
-      document.body.style.setProperty('--NavBarmovement', fraction2);
-    });
-    document.body.style.setProperty('--bg-image', "url('AndromedaBackground.jpg')");
-  </script>
+<!-- Webpage scripts -->
+  <script src="scripts/homepage-background.js"></script>
 </body>
 </html>
 

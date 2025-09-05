@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>John Ray - Travel Photography</title>
   <link rel="stylesheet" href="/stylesheet.css">
-  <link rel="icon" href="/Icon1.png" type="png">
+  <link rel="icon" href="/images/general-assets/Icon2.png" type="png">
 </head>
 <body>
 
@@ -30,12 +30,12 @@
 	<div class="nav-item has-submenu">
 	  <a href="/travelphotography/">Travel Photography</a>
 	  <ul class="submenu">
-            <li><a href="/lisbontrip/">Lisbon Trip</a></li>
-            <li><a href="/liverpooltrip/">Liverpool Trip</a></li>
-            <li><a href="/angleseytrip/">Anglesey Trip</a></li>
-            <li><a href="/brusselstrip/">Brussels Trip</a></li>
-            <li><a href="/yorktrip/">York Trip</a></li>
-		    <li><a href="/farne-islands-day-one/">Farne Islands Trip</a></li>
+            <li><a href="/lisbon-trip/">Lisbon Trip</a></li>
+            <li><a href="/liverpool-trip/">Liverpool Trip</a></li>
+            <li><a href="/anglesey-trip/">Anglesey Trip</a></li>
+            <li><a href="/brussels-trip/">Brussels Trip</a></li>
+            <li><a href="/york-trip/">York Trip</a></li>
+ 	    <li><a href="/farne-islands-day-one/">Farne Islands Trip</a></li>
           </ul>
 	</div>
           <a href="https://clients.naturewebsites.com/john">All Photos</a>
@@ -49,41 +49,41 @@
 	as a sort of personal travel blog - I hope you enjoy it! Many more trips are to come!</p>
   </div>
 <section class="feature-section">
-    <a href="/lisbontrip/" class="feature-item">
+    <a href="/lisbon-trip/" class="feature-item">
         <div class="feature-image">
-            <img src="/BelemTower.JPG" alt="Lisbon Day Trip" />
+            <img src="/images/lisbon/BelemTower.JPG" alt="Lisbon Day Trip" />
         </div>
         <div class="feature-text">
             <h>Lisbon Day Trip (Click here to view)</h>
         </div>
     </a>
-	<a href="/liverpooltrip/" class="feature-item">
+	<a href="/liverpool-trip/" class="feature-item">
         <div class="feature-image">
-            <img src="/Spirit of Liverpool.JPG" alt="Liverpool Trip" />
+            <img src="/images/liverpool/Spirit of Liverpool.JPG" alt="Liverpool Trip" />
         </div>
         <div class="feature-text">
             <h>Liverpool Trip (Click here to view)</h>
         </div>
     </a>
-    <a href="/angleseytrip/" class="feature-item">
+    <a href="/anglesey-trip/" class="feature-item">
         <div class="feature-image">
-            <img src="/MinaiBridgebyDay.JPG" alt="Anglesey Trip" />
+            <img src="/images/anglesey/MinaiBridgebyDay.JPG" alt="Anglesey Trip" />
         </div>
         <div class="feature-text">
             <h>Anglesey Trip (Click here to view)</h>
         </div>
     </a>
-    <a href="/brusselstrip/" class="feature-item">
+    <a href="/brussels-trip/" class="feature-item">
         <div class="feature-image">
-            <img src="/BelgianChocolateShop.JPG" alt="Brussels Trip" />
+            <img src="/images/brussels/BelgianChocolateShop.JPG" alt="Brussels Trip" />
         </div>
         <div class="feature-text">
             <h>Brussels Day Trip (Click here to view)</h>
         </div>
     </a>
-	 <a href="/yorktrip/" class="feature-item">
+	 <a href="/york-trip/" class="feature-item">
         <div class="feature-image">
-            <img src="/RosesCamera.JPG" alt="York and Roses 2025 Trip" />
+            <img src="/images/york/RosesCamera.JPG" alt="York and Roses 2025 Trip" />
         </div>
         <div class="feature-text">
             <h>York & Roses 2025 Trip (Click here to view)</h>
@@ -91,7 +91,7 @@
     </a>
 	<a href="/farne-islands-day-one/" class="feature-item">
         <div class="feature-image">
-            <img src="/images/Lighthouse1.JPG" alt="Farne Islands Trip" />
+            <img src="/images/farne-islands/Lighthouse1.JPG" alt="Farne Islands Trip" />
         </div>
         <div class="feature-text">
             <h>Farne Islands Trip (Click here to view)</h>
@@ -112,19 +112,8 @@
       </div>
   </footer>
 
-  <script>
-    // As the user scrolls, the background opacity is updated (0 at scrollY = 0 to 1 at scrollY = 1500)
-    window.addEventListener('scroll', () => {
-      let scrollY = window.scrollY;
-      let fraction = Math.min(scrollY / 1500, 1);
-      document.body.style.setProperty('--bg-opacity', fraction);
-      let fraction2 = (50 + 50 * Math.min(scrollY / 500, 1)) + '%';
-      document.body.style.setProperty('--NavBarmovement', fraction2);
-    });
-    
-    // Sets the default background image (for the main background)
-    document.body.style.setProperty('--bg-image', "url('/AndromedaBackground.jpg')");
-  </script>
+<!-- Webpage scripts -->
+  <script src="/scripts/background.js"></script>
 
 </body>
 </html>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>John Ray - About me</title>
   <link rel="stylesheet" href="/stylesheet.css">
-  <link rel="icon" href="/Icon1.png" type="png">
+  <link rel="icon" href="/images/general-assets/Icon2.png" type="png">
 </head>
 <body>
 
@@ -21,8 +21,7 @@
           <ul class="submenu">
             <li><a href="https://luastro.space">LUAstro website</a></li>
             <li><a href="https://www.lancaster.ac.uk/physics/business/case-studies/">LU Physics case studies</a></li>
-	    <li><a href="/projects/MatCalc/">C++ Matrix Calculator</a></li>
-	    
+	    <li><a href="/projects/MatCalc/">C++ Matrix Calculator</a></li> 
           </ul>
           </div>
           <a href="/astrophotography/">Astrophotography</a>
@@ -36,6 +35,7 @@
             <li><a href="/angleseytrip/">Anglesey Trip</a></li>
             <li><a href="/brusselstrip/">Brussels Trip</a></li>
             <li><a href="/yorktrip/">York Trip</a></li>
+            <li><a href="/farne-islands-day-one/">Farne Islands Trip</a></li>
           </ul>
 	</div>
           <a href="https://clients.naturewebsites.com/john">All Photos</a>
@@ -83,7 +83,7 @@ or you can visit my Instagram at <a href="https://instagram.com/john.59.ray" tar
 	<li><a href="https://www.aidansean.com/">Aidan Randle-Conde's website.</a> Again, I've never met him either, but his site inspired my own <a href="/projects">Projects</a> page, and he's done 
 	some fascinating things too.</li>
 	<li><a href="https://astrobyorlando.com/">Astro by Orlando</a> one of my friend's older Astronomy sites - would recommend for buying Bahtinov Masks!</li>
-	<li><a href="https://iantoevansphotography.com/">Ianto Evans' website.</a> Another friend of mine's website, showing his very nice photography.</li>
+	<li><a href="https://iantoevansphotography.com/">Ianto Evans's website.</a> Another friend of mine's website, showing his photography.</li>
 	</ul>
   </div>
   <!-- Extra space for scrolling -->
@@ -100,19 +100,8 @@ or you can visit my Instagram at <a href="https://instagram.com/john.59.ray" tar
       </div>
   </footer>
 
-  <script>
-    // As the user scrolls, update the background opacity (0 at scrollY=0 to 1 at scrollY=1500)
-    window.addEventListener('scroll', () => {
-      let scrollY = window.scrollY;
-      let fraction = Math.min(scrollY / 1500, 1);
-      document.body.style.setProperty('--bg-opacity', fraction);
-      let fraction2 = (50 + 50 * Math.min(scrollY / 500, 1)) + '%';
-      document.body.style.setProperty('--NavBarmovement', fraction2);
-    });
-    
-    // Set the default background image (for the main background)
-    document.body.style.setProperty('--bg-image', "url('/AndromedaBackground.jpg')");
-  </script>
+<!-- Webpage scripts -->
+  <script src="/scripts/background.js"></script>
 
 </body>
 </html>

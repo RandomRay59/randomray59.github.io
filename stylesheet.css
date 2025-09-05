@@ -14,7 +14,7 @@ body {
   /* Initialize background variables (used elsewhere) */
   --bg-opacity: 0;
   /* --bg-image is set in JS */
-  --navbar-bg: url('NavBarBackground.jpg');
+  --navbar-bg: url('/images/general-assets/NavBarBackground.jpg');
   --navbar-opacity: 0.5;
   --NavBarmovement: 50%;
 }

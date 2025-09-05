@@ -8,3 +8,4 @@
       document.body.style.setProperty('--NavBarmovement', fraction2);
     });
     document.body.style.setProperty('--bg-image', "url('/images/brussels/BrusselsBackground.JPG')");
+

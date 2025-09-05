@@ -7,4 +7,5 @@
       let fraction2 = (50 + 50 * Math.min(scrollY / 500, 1)) + '%';
       document.body.style.setProperty('--NavBarmovement', fraction2);
     });
-    document.body.style.setProperty('--bg-image', "url('/images/general-assets/BrusselsBackground.JPG')");
+    document.body.style.setProperty('--bg-image', "url('/images/brussels/BrusselsBackground.JPG')");
+

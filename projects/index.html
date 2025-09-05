@@ -7,7 +7,7 @@
   <meta name="keywords" content="John Ray, Physics, Lancaster University, Projects, Coding, Code, LUAstro, LUAstro.space website, JavaScript, Python, C++, R, Lancaster University, Physics Case Studies">
   <title>John Ray - Projects</title>
   <link rel="stylesheet" href="/stylesheet.css">
-  <link rel="icon" href="/Icon2.png" type="png">
+  <link rel="icon" href="/images/general-assets/Icon2.png" type="png">
 </head>
 <body style="--bg-colour: #000000;">
   <div class="navbar">
@@ -30,11 +30,11 @@
 	<div class="nav-item has-submenu">
 	  <a href="/travelphotography/">Travel Photography</a>
 	  <ul class="submenu">
-            <li><a href="/lisbontrip/">Lisbon Trip</a></li>
-            <li><a href="/liverpooltrip/">Liverpool Trip</a></li>
-            <li><a href="/angleseytrip/">Anglesey Trip</a></li>
-            <li><a href="/brusselstrip/">Brussels Trip</a></li>
-            <li><a href="/yorktrip/">York Trip</a></li>
+            <li><a href="/lisbon-trip/">Lisbon Trip</a></li>
+            <li><a href="/liverpool-trip/">Liverpool Trip</a></li>
+            <li><a href="/anglesey-trip/">Anglesey Trip</a></li>
+            <li><a href="/brussels-trip/">Brussels Trip</a></li>
+            <li><a href="/york-trip/">York Trip</a></li>
 	        <li><a href="/farne-islands-day-one/">Farne Islands Trip</a></li>
           </ul>
 	</div>
@@ -56,7 +56,7 @@ like <a href="https://aidansean.com">Aidan Randle-Conde</a>). Regardless, I hope
 
 <div class="projectscontainer" style="--containercolour: #7d8fad;--titleboxcolour: #7d8fad; --linkcolour: #3c3e42">
   <div class="left">
-    <img src="/C++ logo.png" alt="C++ logo" style="width:150px;">
+    <img src="/images/general-assets/C++ logo.png" alt="C++ logo" style="width:150px;">
   </div>
   <div class="center">
     <div class="title-box">
@@ -78,7 +78,7 @@ like <a href="https://aidansean.com">Aidan Randle-Conde</a>). Regardless, I hope
 
 <div class="projectscontainer" style="--containercolour: #555656; --linkcolour: #ff5963;">
   <div class="left">
-    <img src="/LUAstro_old.png" alt="LUAstro logo" style="width:150px;">
+    <img src="/images/general-assets/LUAstro_old.png" alt="LUAstro logo" style="width:150px;">
   </div>
   <div class="center">
     <div class="title-box">
@@ -104,7 +104,7 @@ like <a href="https://aidansean.com">Aidan Randle-Conde</a>). Regardless, I hope
 
 <div class="projectscontainer" style="--containercolour: #7d7979;--titleboxcolour: #7d7979; --linkcolour: #b40f17;">
   <div class="left">
-    <img src="/LU_logo.png" alt="LU logo" style="width:150px;">
+    <img src="/images/general-assets/LU_logo.png" alt="LU logo" style="width:150px;">
   </div>
   <div class="center">
     <div class="title-box">
@@ -134,18 +134,9 @@ like <a href="https://aidansean.com">Aidan Randle-Conde</a>). Regardless, I hope
       </div>
   </footer>
 
-  <script>
-    // As the user scrolls,the background opacity is updated (0 at scrollY = 0 to 1 at scrollY = 1500)
-    // This doesn't seem to work on older browsers. Presumably the HTML tags I use here are new or something.
-    window.addEventListener('scroll', () => {
-      let scrollY = window.scrollY;
-      let fraction = Math.min(scrollY / 1500, 1);
-      document.body.style.setProperty('--bg-opacity', fraction);
-      let fraction2 = (50 + 50 * Math.min(scrollY / 500, 1)) + '%';
-      document.body.style.setProperty('--NavBarmovement', fraction2);
-    });
-    document.body.style.setProperty('--bg-image', "url('/AndromedaBackground.jpg')");
-  </script>
+<!-- Webpage scripts -->
+  <script src="/scripts/background.js"></script>
+
 </body>
 </html>
 

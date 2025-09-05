@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MatCalc - John Ray</title>
   <link rel="stylesheet" href="/stylesheet.css">
-  <link rel="icon" href="/Icon1.png" type="png">
+  <link rel="icon" href="/images/general-assets/Icon2.png" type="png">
 </head>
 <body>
   <div class="navbar">
@@ -28,11 +28,12 @@
 	<div class="nav-item has-submenu">
 	  <a href="/travelphotography/">Travel Photography</a>
 	  <ul class="submenu">
-            <li><a href="/lisbontrip/">Lisbon Trip</a></li>
-            <li><a href="/liverpooltrip/">Liverpool Trip</a></li>
-            <li><a href="/angleseytrip/">Anglesey Trip</a></li>
-            <li><a href="/brusselstrip/">Brussels Trip</a></li>
-            <li><a href="/yorktrip/">York Trip</a></li>
+            <li><a href="/lisbon-trip/">Lisbon Trip</a></li>
+            <li><a href="/liverpool-trip/">Liverpool Trip</a></li>
+            <li><a href="/anglesey-trip/">Anglesey Trip</a></li>
+            <li><a href="/brussels-trip/">Brussels Trip</a></li>
+            <li><a href="/york-trip/">York Trip</a></li>
+            <li><a href="/farne-islands-day-one/">Farne Islands Trip</a></li>
           </ul>
 	</div>
           <a href="https://clients.naturewebsites.com/john">All Photos</a>
@@ -71,94 +72,8 @@
       </div>
   </footer>
 
-  <script>
-    // As the user scrolls, the background opacity updates (0 at scrollY = 0 to 1 at scrollY = 1500)
-    // Doesn't work on older browsers
-    window.addEventListener('scroll', () => {
-      let scrollY = window.scrollY;
-      let fraction = Math.min(scrollY / 1500, 1);
-      document.body.style.setProperty('--bg-opacity', fraction);
-      let fraction2 = (50 + 50 * Math.min(scrollY / 500, 1)) + '%';
-      document.body.style.setProperty('--NavBarmovement', fraction2);
-    });
-    document.body.style.setProperty('--bg-image', "url('AndromedaBackground.jpg')");
-  </script>
+<!-- Webpage scripts -->
+  <script src="/scripts/background.js"></script>
 
-  <!-- Lightbox Markup -->
-  <div id="lightbox" class="lightbox">
-    <div class="lightbox-content">
-      <button class="lb-close"    title="Close">✕</button>
-      <button class="lb-maximize" title="Maximize">⤢</button>
-      <img src="" alt="">
-      <p class="lb-caption"></p>
-      <button class="lb-prev"     title="Previous">‹</button>
-      <button class="lb-next"     title="Next">›</button>
-    </div>
-  </div>
-
-  <!-- Lightbox Script -->
-  <script>
-    (function() {
-      // Only images within .feature-item open the lightbox:
-      const items = Array.from(document.querySelectorAll('.feature-item img'));
-      const lightbox   = document.getElementById('lightbox');
-      const lbContent  = lightbox.querySelector('.lightbox-content');
-      const lbImg      = lbContent.querySelector('img');
-      const lbCaption  = lbContent.querySelector('.lb-caption');
-      const closeBtn   = lbContent.querySelector('.lb-close');
-      const maxBtn     = lbContent.querySelector('.lb-maximize');
-      const prevBtn    = lbContent.querySelector('.lb-prev');
-      const nextBtn    = lbContent.querySelector('.lb-next');
-      let currentIndex = 0;
-
-      function showLightbox(idx) {
-        currentIndex = idx;
-        const imgEl = items[idx];
-        lbImg.src    = imgEl.src;
-        lbImg.alt    = imgEl.alt;
-        lbCaption.textContent = imgEl.closest('.feature-item').dataset.caption || imgEl.alt || '';
-        lightbox.classList.add('open');
-      }
-
-      function hideLightbox() {
-        lightbox.classList.remove('open');
-        if (document.fullscreenElement) document.exitFullscreen();
-      }
-
-      function showPrev() { showLightbox((currentIndex - 1 + items.length) % items.length); }
-      function showNext() { showLightbox((currentIndex + 1) % items.length); }
-
-      items.forEach((img, idx) => {
-        img.style.cursor = 'pointer';
-        img.addEventListener('click', e => {
-          e.preventDefault();
-          showLightbox(idx);
-        });
-      });
-
-      closeBtn.addEventListener('click', e => { e.stopPropagation(); hideLightbox(); });
-      lightbox.addEventListener('click', hideLightbox);
-      lbContent.addEventListener('click', e => e.stopPropagation());
-      prevBtn.addEventListener('click', e => { e.stopPropagation(); showPrev(); });
-      nextBtn.addEventListener('click', e => { e.stopPropagation(); showNext(); });
-      maxBtn.addEventListener('click', e => {
-	 e.stopPropagation();
-	  if (!document.fullscreenElement) {
-	    lbContent.requestFullscreen();
-	  } else {
-	    document.exitFullscreen();
-	  }
-	});
-
-
-      document.addEventListener('keydown', e => {
-        if (!lightbox.classList.contains('open')) return;
-        if (e.key === 'Escape') hideLightbox();
-        if (e.key === 'ArrowLeft') showPrev();
-        if (e.key === 'ArrowRight') showNext();
-        if (e.key === 'Enter') maxBtn.click();
-      });
-    })();
-  </script>
 </body>
 </html>

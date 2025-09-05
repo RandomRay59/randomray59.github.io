@@ -40,7 +40,7 @@ body::before {
 /* Navbar styling */
 /* Navbar styling */
 .navbar {
-  --navbar-bg: url('NavBarBackground.jpg');
+  --navbar-bg: url('/images/general-assets/NavBarBackground.jpg');
   background: var(--navbar-bg) center/100% auto no-repeat;
   width: 100%;
   aspect-ratio: 4944 / 1306;
@@ -557,5 +557,6 @@ footer {
 .social-links {
   margin-top: 10px;
 }
+
 
 
